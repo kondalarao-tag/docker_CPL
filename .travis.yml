@@ -7,3 +7,15 @@ before_install:
 
 script:
   - docker run docker-cpl python sample_tests.py
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-flask"
+  env: "DockerFlask-env"
+  bucket_name: "elasticbeanstalk-us-east-2-704785761500"
+  bucket_path: "docker-flask"
+  on:
+    branch: master
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
