@@ -16,7 +16,7 @@ WORKDIR $APP
 
 
 # Expose the port uWSGI will listen on
-# EXPOSE 5000
+EXPOSE 5000
 
 # Copy the requirements file in order to install
 # Python dependencies
@@ -29,3 +29,5 @@ COPY . .
 # Finally, we run uWSGI with the ini file we
 # created earlier
 CMD [ "uwsgi", "--ini", "app.ini" ]
+
+
