@@ -8,12 +8,14 @@ services:
     container_name: flask_webapp
     volumes:
       - "./:/app"
-  nginx:
-    image: webapp-nginx
-    build:
-      context: .
-      dockerfile: Dockerfile-nginx
     ports:
-      - 80:80
-    depends_on:
-      - flask
+      - 5000:5000
+  # nginx:
+  #   image: webapp-nginx
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile-nginx
+  #   ports:
+  #     - 80:80
+  #   depends_on:
+  #     - flask
