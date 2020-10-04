@@ -16,7 +16,7 @@ WORKDIR $APP
 
 
 # Expose the port uWSGI will listen on
-EXPOSE 5000
+EXPOSE 80
 
 # Copy the requirements file in order to install
 # Python dependencies
